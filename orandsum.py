@@ -45,7 +45,7 @@ from math import log
 def log2(x):
     return log(x, 2)
 
-def to_bits(num):
+def to_bits0(num):
     if num == 0:
         return [0]
 
@@ -55,6 +55,12 @@ def to_bits(num):
         bits[N - i - 1] = (num >> i) % 2
 
     return bits
+
+def to_bits(num):
+    bits = [int(x) for x in bin(num)[2:]]
+
+    return bits
+
 
 class OrAndSumEasy:
     def isPossible(self, pairOr, pairSum):
@@ -68,6 +74,7 @@ class OrAndSumEasy:
 
 
 oas = OrAndSumEasy()
+print(oas.isPossible(9007199254740992, 18014398509481984))  # True
 
 print(oas.isPossible(999799115789631487, 999999999999999999))
 print(oas.isPossible(3, 5))
@@ -77,6 +84,9 @@ print(oas.isPossible(1, 100))
 print(oas.isPossible(0, 0))
 print(oas.isPossible(1, 2))
 
+
+#+: 1000000000000000000000000000000000000000000000000000000
+#|:  100000000000000000000000000000000000000000000000000000
 
 '''
 0)
